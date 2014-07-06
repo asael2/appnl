@@ -25,8 +25,8 @@ var ArticleSchema = new Schema({
     },
     content: {
         type: String,
-        required: true,
-        trim: true
+        required: true
+        //trim: true
     },
     arType: {
         type: String
