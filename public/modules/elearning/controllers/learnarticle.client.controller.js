@@ -66,11 +66,6 @@ angular.module('elearning').controller('LearnarticleController', ['$scope', '$st
                 displayNextWord();
             });
 
-
-
-
-            //////////////
-
         }
 
     }
