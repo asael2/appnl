@@ -13,11 +13,15 @@ angular.module('elearning').controller('LearnarticleController', ['$scope', '$st
         $scope.fastReader = function() {
 
             // I LOVE GLOBALS.
-            var buttonEl = document.querySelector('#start');
+            var buttonSlider = document.querySelector('#wpm');
+            var buttonStart = document.querySelector('#start');
             var commentEl = document.querySelector('#comment');
             var wpmEl = document.querySelector('#wpm');
             var readerEl = document.querySelector('#reader');
             var currentTimer = null;
+            var speed = 60000;
+            var delay = speed / parseInt(wpmEl.value, 10);
+
 
             function processWord(word) {
                 var center = Math.floor(word.length / 2);
@@ -41,20 +45,31 @@ angular.module('elearning').controller('LearnarticleController', ['$scope', '$st
                 wordEl.style.left = ((readerEl.clientWidth / 2) - centerOffsetX) + 'px';
                 wordEl.style.top = ((readerEl.clientHeight / 2) - centerOffsetY) + 'px';
             }
+            //velocidad
+            buttonSlider.addEventListener('change', function(elem) {
 
-            buttonEl.addEventListener('click', function() {
+                var speedPosition = this.value;
+                speed = parseInt(speedPosition) + parseInt(speed);
+                delay = speed / parseInt(wpmEl.value, 10);
+
+                console.log("speedPosition: " + speedPosition);
+                console.log("delay: " + delay);
+            });
+            //reiniciar 
+            buttonStart.addEventListener('click', function() {
+
                 var words = commentEl.textContent.split(/\s+/).map(processWord);
                 var currentWord = 0;
-                var delay = 60000 / parseInt(wpmEl.value, 10);
+
 
                 clearTimeout(currentTimer);
 
                 var displayNextWord = function() {
+                    // console.log(this);
                     var word = words[currentWord++];
                     // WTB> nlp.js...
                     var hasPause = /^\(|[,\.\)]$/.test(word);
 
-                    // XSS?! :(.
                     readerEl.firstElementChild.innerHTML = word;
                     positionWord();
 

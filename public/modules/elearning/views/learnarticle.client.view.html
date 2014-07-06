@@ -2,17 +2,16 @@
 	<div class="page-header">
 		<h1 data-ng-bind="article.title"></h1>
 	</div>
-
     <!-- <p class="url">Tipo de Articulo : {{article.arType}}</p> -->
-
-	<div id="reader">
-    <div id="word"></div>
-</div>
-<!-- <input type="number" value="250" id="wpm"> -->
-	
-	<input id="wpm" type="range" data-ng-model="speed" name="points" min="250" max="800">
+	<div id="reader" class="reader">
+    	<div id="word" class="word"></div>
+	</div>
+	<!-- <input type="number" value="250" id="wpm"> -->
+	<br>
+	<input type="range" id="wpm" class="ranger" data-ng-model="speed" name="speed" min="240" max="800" value="250">
+	<br>
 	<button id="start">Reniciar con velocidad {{speed}}</button>
-
+	<p class="speednum">{{speed}}</p>
 	<div ng-show="article.content == texto" class="extras">
 	<p id="comment" class="content" data-ng-bind="article.content" data-ng-init="fastReader()"></p>
 	<p class="description">Titulo Link: {{article.resource.description}}</p>
