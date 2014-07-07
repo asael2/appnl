@@ -9,7 +9,6 @@ angular.module('elearning').controller('LearnarticleController', ['$scope', '$st
                 articleId: $stateParams.articleId
             });
         };
-
         $scope.fastReader = function() {
 
             // I LOVE GLOBALS.
@@ -18,10 +17,17 @@ angular.module('elearning').controller('LearnarticleController', ['$scope', '$st
             var commentEl = document.querySelector('#comment');
             var wpmEl = document.querySelector('#wpm');
             var readerEl = document.querySelector('#reader');
+            var progressbar = document.getElementById('progressBar');
             var currentTimer = null;
             var speed = 60000;
             var delay = speed / parseInt(wpmEl.value, 10);
+            var dynamic = 240;
 
+            // function progresar(currentWord) {
+            //     console.log("Current Word:: " + currentWord);
+            //     console.log("Progresando current Word number:: " + progressbar);
+
+            // }
 
             function processWord(word) {
                 var center = Math.floor(word.length / 2);
@@ -45,43 +51,42 @@ angular.module('elearning').controller('LearnarticleController', ['$scope', '$st
                 wordEl.style.left = ((readerEl.clientWidth / 2) - centerOffsetX) + 'px';
                 wordEl.style.top = ((readerEl.clientHeight / 2) - centerOffsetY) + 'px';
             }
+
             //velocidad
             buttonSlider.addEventListener('change', function(elem) {
-
                 var speedPosition = this.value;
                 speed = parseInt(speedPosition) + parseInt(speed);
                 delay = speed / parseInt(wpmEl.value, 10);
-
-                console.log("speedPosition: " + speedPosition);
-                console.log("delay: " + delay);
             });
+
             //reiniciar 
             buttonStart.addEventListener('click', function() {
 
                 var words = commentEl.textContent.split(/\s+/).map(processWord);
                 var currentWord = 0;
 
-
                 clearTimeout(currentTimer);
 
                 var displayNextWord = function() {
-                    // console.log(this);
                     var word = words[currentWord++];
-                    // WTB> nlp.js...
                     var hasPause = /^\(|[,\.\)]$/.test(word);
 
                     readerEl.firstElementChild.innerHTML = word;
+
                     positionWord();
+                    $scope.dynamic = dynamic + currentWord;
+                    console.log($scope.dynamic);
 
                     if (currentWord !== words.length) {
                         currentTimer = setTimeout(displayNextWord, delay * (hasPause ? 3 : 1));
                     }
                 };
-
                 displayNextWord();
             });
 
-        }
+        };
+
+
 
     }
 ]);
