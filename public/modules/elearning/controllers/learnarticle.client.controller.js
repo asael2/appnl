@@ -2,7 +2,6 @@
 angular.module('elearning').controller('LearnarticleController', ['$rootScope', '$scope', '$stateParams', '$location', 'Authentication', 'Articles',
     function($rootScope, $scope, $stateParams, $location, Authentication, Articles) {
         $scope.authentication = Authentication;
-    // $scope.readProgress = "0";
         //listar 1 articulo
         $scope.findOne = function() {
             $scope.article = Articles.get({
@@ -27,8 +26,6 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
             var speed = 60000;
             var delay = speed / parseInt(wpmEl.value, 10);
             var dynamic = 240;
-
-
 
             function processWord(word) {
                 var center = Math.floor(word.length / 2);
