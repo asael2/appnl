@@ -8,6 +8,22 @@
 	display: none !important;
 }
 
+.progress{ 
+    height: 0.14em;
+    margin-bottom: 0;
+    width: 98.4%;
+    margin: auto;
+}
+    .progress-bar{
+         background: red;
+    }
+
+/*.speedPosition{
+    border: 1px solid;
+    margin: auto;
+    width: 80%
+}*/
+
 .readerContainer{
     -webkit-box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.75);
     -moz-box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.75);
@@ -21,7 +37,17 @@
     padding: 10px;
 
 }
-
+.speednum{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.42;
+    border-radius: 15px;
+    background: black;
+    color: whitesmoke;
+}
 .reader {
     padding: 20px;
     border-top: 1px solid black;
@@ -36,38 +62,27 @@
     margin: auto;
 }
 
+.reader::before, .reader::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+    height: 10px;
+    background-color: black;
+    width: 2px;
+    top: 0;
+}
+
+.reader::after {
+    top: auto;
+    bottom: 0;
+}
+
 .word {
     position: absolute;
 }
 
 .highlight {
     color: #c00;
-}
-.speedLess, .speedMore{
-    cursor: pointer;
-}
-.progress{ 
-    height: 0.14em;
-    margin-bottom: 0;
-    width: 98.4%;
-    margin: auto;
-}
-    .progress-bar{
-         background: red;
-    }
-
-.speedControl{
-    display: block;
-    text-align: center; 
-}
-    .speedControl li:nth-child(2){
-        width: 50%;
-    }
-
-input[type="range"]::-webkit-slider-thumb {
-     -webkit-appearance: none;
-    background-color: black;
-    /*opacity: 0.5;*/
-    width: 60px;
-    height: 24px;
 }

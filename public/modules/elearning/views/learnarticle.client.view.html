@@ -25,9 +25,11 @@
 			</ul>
 			
 			<p class="speednum"> sliderValue {{sliderValue}}</p>
-				
-			<button class="btn btn-info" id="start">Iniciar {{speed}}</button>
-			<button class="btn btn-info" id="pause">Pausar {{speed}}</button>
+			<ul>
+				<li class="readerButton glyphicon glyphicon-fast-backward" id="start"></li>
+				<li class="readerButton glyphicon glyphicon-play" id="play"> </li>
+				<li class="readerButton glyphicon glyphicon-pause" id="pause"> </li>
+			</ul>	
 		</div>
 		
 		<div class="page-content" ng-show="article.content == texto" class="extras">
