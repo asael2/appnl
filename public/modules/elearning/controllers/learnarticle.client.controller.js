@@ -21,10 +21,6 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
             var commentEl = document.querySelector('#comment');
             var readerEl = document.querySelector('#reader');
 
-            var progressbar = document.querySelector('progressbar');
-            // var buttonSpeedMore = document.querySelector('#speedMore');
-            // var buttonSpeedLess = document.querySelector('#speedLess');
-
             var buttonSlider = document.querySelector('#wpm');
             var buttonStart = document.querySelector('#start');
 
@@ -38,14 +34,12 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
                 buttonSlider.stepUp(4);
                 speed = parseInt(buttonSlider.value) + parseInt(speed);
                 delay = speed / parseInt(buttonSlider.value, 10);
-                console.log("speed: " + speed + "delay: " + delay);
             }
 
             $scope.speedLess = function() {
                 buttonSlider.stepDown(4);
                 speed = parseInt(buttonSlider.value) + parseInt(speed);
                 delay = speed / parseInt(buttonSlider.value, 10);
-                console.log("speed: " + speed + "delay: " + delay);
             }
 
             function processWord(word) {
@@ -83,6 +77,7 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
                 clearTimeout(currentTimer);
 
                 var displayNextWord = function() {
+                    console.log("currentTimer: " + currentTimer + " - currentWord: " + currentWord);
                     var word = words[currentWord++];
                     var hasPause = /^\(|[,\.\)]$/.test(word);
 
