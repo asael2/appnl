@@ -12,20 +12,41 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
             $scope.$apply(function() {
                 $scope.readProgress = currentWord / words.length * 100;
             });
+
         }
+
         $scope.fastReader = function() {
 
             // I LOVE GLOBALS.
+            var commentEl = document.querySelector('#comment');
+            var readerEl = document.querySelector('#reader');
+
+            var progressbar = document.querySelector('progressbar');
+            // var buttonSpeedMore = document.querySelector('#speedMore');
+            // var buttonSpeedLess = document.querySelector('#speedLess');
+
             var buttonSlider = document.querySelector('#wpm');
             var buttonStart = document.querySelector('#start');
-            var commentEl = document.querySelector('#comment');
-            var wpmEl = document.querySelector('#wpm');
-            var readerEl = document.querySelector('#reader');
-            var progressbar = document.querySelector('progressbar');
+
             var currentTimer = null;
             var speed = 60000;
-            var delay = speed / parseInt(wpmEl.value, 10);
+            var delay = speed / parseInt(buttonSlider.value, 10);
             var dynamic = 240;
+
+
+            $scope.speedMore = function() {
+                buttonSlider.stepUp(4);
+                speed = parseInt(buttonSlider.value) + parseInt(speed);
+                delay = speed / parseInt(buttonSlider.value, 10);
+                console.log("speed: " + speed + "delay: " + delay);
+            }
+
+            $scope.speedLess = function() {
+                buttonSlider.stepDown(4);
+                speed = parseInt(buttonSlider.value) + parseInt(speed);
+                delay = speed / parseInt(buttonSlider.value, 10);
+                console.log("speed: " + speed + "delay: " + delay);
+            }
 
             function processWord(word) {
                 var center = Math.floor(word.length / 2);
@@ -50,14 +71,11 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
                 wordEl.style.top = ((readerEl.clientHeight / 2) - centerOffsetY) + 'px';
             }
 
-            //velocidad
-            buttonSlider.addEventListener('change', function(elem) {
-                var speedPosition = this.value;
-                speed = parseInt(speedPosition) + parseInt(speed);
-                delay = speed / parseInt(wpmEl.value, 10);
+            buttonSlider.addEventListener('change', function() {
+                speed = parseInt(this.value) + parseInt(speed);
+                delay = speed / parseInt(this.value, 10);
             });
 
-            //reiniciar 
             buttonStart.addEventListener('click', function() {
                 var words = commentEl.textContent.split(/\s+/).map(processWord);
                 var currentWord = 0;
@@ -71,8 +89,6 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
                     readerEl.firstElementChild.innerHTML = word;
 
                     positionWord();
-
-                    console.log(currentWord);
 
                     $scope.progresar(currentWord, words);
 
