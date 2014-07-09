@@ -24,6 +24,7 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
             var currentTimer = null;
             var sliderValue = parseInt(buttonSlider.value, 10);
             var delay = speed / sliderValue;
+            var isPlaying = 0;
 
 
             buttonSlider.addEventListener('change', function() {
@@ -38,6 +39,7 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
 
             buttonPause.addEventListener('click', function() {
                 $scope.pauseReader();
+
                 //
             });
 
@@ -47,11 +49,13 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
             });
 
             $scope.startReader = function() {
+                console.log("startReader");
 
                 var words = commentEl.textContent.split(/\s+/).map(processWord);
                 var currentWord = 0;
 
                 $scope.playReader = function() {
+                    console.log("playReader");
                     var word = words[currentWord++];
                     var hasPause = /^\(|[,\;\:\)]$/.test(word);
                     var hasPoint = /^\(|[\.\)]$/.test(word);
@@ -64,16 +68,28 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
                     }
                     //progress bar
                     $scope.progressBar(currentWord, words);
-                    console.log("playReader");
+
+                    $scope.$apply(function() {
+                        $scope.isPlaying = 1;
+                    });
                 };
 
                 $scope.pauseReader = function() {
-                    clearTimeout(currentTimer);
                     console.log("pauseReader");
+
+                    clearTimeout(currentTimer);
+                    if ($scope.isPlaying == 0) {
+                        $scope.playReader();
+                    }
+
+                    $scope.$apply(function() {
+                        $scope.isPlaying = 0;
+                    });
                 }
+
                 clearTimeout(currentTimer);
                 $scope.playReader();
-                console.log("startReader");
+
             }
 
             $scope.progressBar = function(currentWord, words) {

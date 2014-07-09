@@ -27,8 +27,8 @@
 			<p class="sliderValue"> sliderValue: {{sliderValue}}</p>
 			<ul class="readerControllButtons">
 				<li class="glyphicon glyphicon-fast-backward" id="start"></li>
-				<li class="glyphicon glyphicon-play" id="play"> </li>
-				<li class="glyphicon glyphicon-pause" id="pause"> </li>
+				<li class="glyphicon glyphicon-play" id="play" ng-show="!isPlaying"> </li>
+				<li class="glyphicon glyphicon-pause" id="pause" ng-show="isPlaying"> </li>
 			</ul>	
 		</div>
 		
