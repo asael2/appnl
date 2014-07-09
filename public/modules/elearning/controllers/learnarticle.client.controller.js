@@ -32,19 +32,17 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
             });
 
             buttonStart.addEventListener('click', function() {
-                //$scope.startReader();
-                console.log();
-                readerStates.init()
-                //$scope.playReader();
+                $scope.startReader();
+                //
             });
 
             buttonPause.addEventListener('click', function() {
-                //clearTimeout(currentTimer);
                 $scope.pauseReader();
+                //
             });
 
             buttonPlay.addEventListener('click', function() {
-                $scope.playReader();
+                $scope.playReader ? $scope.playReader() : $scope.startReader();
                 //
             });
 
@@ -73,7 +71,7 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
                     clearTimeout(currentTimer);
                     console.log("pauseReader");
                 }
-
+                clearTimeout(currentTimer);
                 $scope.playReader();
                 console.log("startReader");
             }
