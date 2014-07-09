@@ -53,27 +53,26 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
                 var words = commentEl.textContent.split(/\s+/).map(processWord);
                 var currentWord = 0;
 
-                $scope.pauseReader = function() {
-                    clearTimeout(currentTimer);
-                    console.log("pauseReader");
-                }
-
                 $scope.playReader = function() {
                     var word = words[currentWord++];
-                    var hasPause = /^\(|[,\)]$/.test(word);
+                    var hasPause = /^\(|[,\;\:\)]$/.test(word);
                     var hasPoint = /^\(|[\.\)]$/.test(word);
                     readerEl.firstElementChild.innerHTML = word;
                     positionWord();
                     if (currentWord !== words.length) {
-                        currentTimer = setTimeout($scope.playReader, delay * (hasPause || hasPoint ? 4 : 1));
+                        currentTimer = setTimeout($scope.playReader, delay * (hasPause ? 3 : hasPoint ? 8 : 1));
                     } else {
                         alert("Terminó!");
                     }
                     //progress bar
                     $scope.progressBar(currentWord, words);
-
                     console.log("playReader");
                 };
+
+                $scope.pauseReader = function() {
+                    clearTimeout(currentTimer);
+                    console.log("pauseReader");
+                }
 
                 $scope.playReader();
                 console.log("startReader");

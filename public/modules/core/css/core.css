@@ -8,21 +8,6 @@
 	display: none !important;
 }
 
-.progress{ 
-    height: 0.14em;
-    margin-bottom: 0;
-    width: 98.4%;
-    margin: auto;
-}
-    .progress-bar{
-         background: red;
-    }
-
-/*.speedPosition{
-    border: 1px solid;
-    margin: auto;
-    width: 80%
-}*/
 
 .readerContainer{
     -webkit-box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.75);
@@ -37,17 +22,7 @@
     padding: 10px;
 
 }
-.speednum{
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    padding: 6px 0;
-    font-size: 12px;
-    line-height: 1.42;
-    border-radius: 15px;
-    background: black;
-    color: whitesmoke;
-}
+
 .reader {
     padding: 20px;
     border-top: 1px solid black;
@@ -86,3 +61,39 @@
 .highlight {
     color: #c00;
 }
+
+.progress{ 
+    height: 0.14em;
+    margin-bottom: 0;
+    width: 98.4%;
+    margin: auto;
+}
+    .progress-bar{
+         background: red;
+    }
+
+.speedControl{
+    text-align: center;
+} 
+.speedControl > li:nth-child(2){
+    width: 80%;
+}
+.speedMore{
+    cursor: pointer;
+}
+
+.readerControllButtons{
+    font-size: 2.2em;
+    text-align: center;
+}
+
+.readerControllButtons li{
+    margin: 20px;
+    color: #828282;
+}
+
+
+
+
+
+
