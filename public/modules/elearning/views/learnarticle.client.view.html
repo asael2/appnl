@@ -1,32 +1,47 @@
 <section data-ng-controller="LearnarticleController" data-ng-init="findOne()">
-	<div class="page-header">
-		<h1 data-ng-bind="article.title"></h1>
-	</div>
-    
-	<div ng-show="article.content == texto" class="extras">
-		<p id="comment" class="content" data-ng-bind="article.content" ></p>
-		<p class="description">Titulo Link: {{article.resource.description}}</p>
-	    <p class="url">Recurso Link: {{article.resource.url}}</p>
-	    <p class="url">Status: {{article.status}}</p>
+
+	<div class="articleText">
+
+		<div class="page-header">
+			<h1 data-ng-bind="article.title"></h1>
+		</div>
+
+	    <div class="readerContainer" data-ng-init="fastReader()">
+	    	
+	    	<div class="readerBox">
+				<div id="reader" class="reader">
+			    	<div id="word" class="word"></div>
+				</div>
+	    	</div>
+	    	
+	    	<progressbar value="readProgress" ></progressbar>	
+			
+			<br>
+			
+			<ul class="list-inline speedControl">
+				<li> <span class="glyphicon glyphicon-minus speedLess" ng-click="speedLess()" ></span> </li>
+				<li> <input type="range" id="wpm" class="ranger" name="speed" min="240" max="800" value="240" step="20"> </li>
+				<li> <span  class="glyphicon glyphicon-plus speedMore" ng-click="speedMore()"></span> </li>
+			</ul>
+			
+			<p class="speednum"> sliderValue {{sliderValue}}</p>
+				
+			<button class="btn btn-info" id="start">Iniciar {{speed}}</button>
+			<button class="btn btn-info" id="pause">Pausar {{speed}}</button>
+		</div>
+		
+		<div class="page-content" ng-show="article.content == texto" class="extras">
+			<p id="comment" class="content" data-ng-bind="article.content" ></p>
+			<p> Titulo Link: {{article.resource.description}}</p>
+		    <p> Recurso Link: {{article.resource.url}}</p>
+		    <p> Status: {{article.status}}</p>
+		</div>
+
 	</div>
 
-    <div class="readerContainer" data-ng-init="fastReader()">
-    	<div class="readerBox">
-			<div id="reader" class="reader">
-		    	<div id="word" class="word"></div>
-			</div>
-    	</div>
-    	<progressbar value="readProgress" ></progressbar>	
-		<br>
-		<ul class="list-inline speedControl">
-			<li> <span class="glyphicon glyphicon-minus speedLess" ng-click="speedLess()" ></span> </li>
-			<li> <input type="range" id="wpm" class="ranger" name="speed" min="240" max="800" value="240" step="20"> </li>
-			<li> <span  class="glyphicon glyphicon-plus speedMore" ng-click="speedMore()"></span> </li>
-		</ul>
-		{{}}
-			
-	<button class="btn btn-info" id="start">Iniciar {{speed}}</button>
-	</div>
+
+
+
 
 
 </section>

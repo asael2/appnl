@@ -1,45 +1,45 @@
 'use strict';
 angular.module('elearning').controller('LearnarticleController', ['$rootScope', '$scope', '$stateParams', '$location', 'Authentication', 'Articles',
     function($rootScope, $scope, $stateParams, $location, Authentication, Articles) {
+
         $scope.authentication = Authentication;
+
         //listar 1 articulo
         $scope.findOne = function() {
             $scope.article = Articles.get({
                 articleId: $stateParams.articleId
             });
         };
-        $scope.progresar = function(currentWord, words) {
-            $scope.$apply(function() {
-                $scope.readProgress = currentWord / words.length * 100;
-            });
-
-        }
 
         $scope.fastReader = function() {
-
             // I LOVE GLOBALS.
             var commentEl = document.querySelector('#comment');
             var readerEl = document.querySelector('#reader');
 
             var buttonSlider = document.querySelector('#wpm');
             var buttonStart = document.querySelector('#start');
+            var buttonPause = document.querySelector('#pause');
 
             var currentTimer = null;
             var speed = 60000;
-            var delay = speed / parseInt(buttonSlider.value, 10);
-            var dynamic = 240;
+            var sliderValue = parseInt(buttonSlider.value, 10);
+            var delay = speed / sliderValue;
 
+            $scope.progressBar = function(currentWord, words) {
+                $scope.$apply(function() {
+                    $scope.readProgress = currentWord / words.length * 100;
+
+                });
+            }
 
             $scope.speedMore = function() {
                 buttonSlider.stepUp(4);
-                speed = parseInt(buttonSlider.value) + parseInt(speed);
-                delay = speed / parseInt(buttonSlider.value, 10);
+                changeSpeed(buttonSlider);
             }
 
             $scope.speedLess = function() {
                 buttonSlider.stepDown(4);
-                speed = parseInt(buttonSlider.value) + parseInt(speed);
-                delay = speed / parseInt(buttonSlider.value, 10);
+                changeSpeed(buttonSlider);
             }
 
             function processWord(word) {
@@ -65,33 +65,41 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
                 wordEl.style.top = ((readerEl.clientHeight / 2) - centerOffsetY) + 'px';
             }
 
-            buttonSlider.addEventListener('change', function() {
-                speed = parseInt(this.value) + parseInt(speed);
-                delay = speed / parseInt(this.value, 10);
-            });
+            function changeSpeed(self) {
+                speed = parseInt(self.value) + parseInt(speed);
+                delay = speed / parseInt(self.value, 10);
+            }
 
-            buttonStart.addEventListener('click', function() {
+            function startReader() {
                 var words = commentEl.textContent.split(/\s+/).map(processWord);
                 var currentWord = 0;
 
+                //reset
                 clearTimeout(currentTimer);
 
                 var displayNextWord = function() {
-                    console.log("currentTimer: " + currentTimer + " - currentWord: " + currentWord);
                     var word = words[currentWord++];
                     var hasPause = /^\(|[,\.\)]$/.test(word);
-
                     readerEl.firstElementChild.innerHTML = word;
-
                     positionWord();
-
-                    $scope.progresar(currentWord, words);
-
                     if (currentWord !== words.length) {
-                        currentTimer = setTimeout(displayNextWord, delay * (hasPause ? 3 : 1));
+                        currentTimer = setTimeout(displayNextWord, delay * (hasPause ? 4 : 1));
+                    } else {
+                        alert("Terminó!");
                     }
+                    //progress bar
+                    $scope.progressBar(currentWord, words);
                 };
                 displayNextWord();
+            }
+
+            buttonSlider.addEventListener('change', function() {
+                self = this;
+                changeSpeed(self);
+            });
+
+            buttonStart.addEventListener('click', function() {
+                startReader();
             });
 
         };
