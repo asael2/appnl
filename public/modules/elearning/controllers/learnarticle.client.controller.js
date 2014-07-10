@@ -25,7 +25,7 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
             var sliderValue = parseInt(buttonSlider.value, 10);
             var delay = speed / sliderValue;
             var isPlaying = 0;
-
+            $scope.sliderValue = buttonSlider.value;
 
             buttonSlider.addEventListener('change', function() {
                 self = this;
@@ -62,9 +62,12 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
                     readerEl.firstElementChild.innerHTML = word;
                     positionWord();
                     if (currentWord !== words.length) {
-                        currentTimer = setTimeout($scope.playReader, delay * (hasPause ? 3 : hasPoint ? 8 : 1));
+                        currentTimer = setTimeout($scope.playReader, delay * (hasPause ? 3 : hasPoint ? 5 : 1));
                     } else {
-                        alert("Terminó!");
+                        console.log("Termine!");
+                        $scope.$apply(function() {
+                            $scope.isPlaying = 0;
+                        });
                     }
                     //progress bar
                     $scope.progressBar(currentWord, words);
@@ -87,9 +90,22 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
                     });
                 }
 
+                 $scope.rewindReader = function() {
+                    console.log("rewindReader");
+
+                    clearTimeout(currentTimer);
+                    
+                // if ($scope.isPlaying == 0) {
+                //     $scope.playReader();
+                // }
+
+                    $scope.$apply(function() {
+                        $scope.isPlaying = 0;
+                    });
+                }
+
                 clearTimeout(currentTimer);
                 $scope.playReader();
-
             }
 
             $scope.progressBar = function(currentWord, words) {
@@ -106,6 +122,12 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
             $scope.speedMore = function() {
                 buttonSlider.stepUp(4);
                 changeSpeed(buttonSlider);
+            }
+
+            function changeSpeed(self) {
+                speed = parseInt(self.value) + parseInt(speed);
+                delay = speed / parseInt(self.value, 10);
+                $scope.sliderValue = buttonSlider.value;
             }
 
             function processWord(word) {
@@ -131,16 +153,7 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
                 wordEl.style.top = ((readerEl.clientHeight / 2) - centerOffsetY) + 'px';
             }
 
-            function changeSpeed(self) {
-                speed = parseInt(self.value) + parseInt(speed);
-                delay = speed / parseInt(self.value, 10);
-            }
 
-            var readerStates = {
-                init: $scope.startReader,
-                play: $scope.playReader,
-                pause: $scope.pauseReader
-            }
 
         };
 
