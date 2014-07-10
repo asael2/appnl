@@ -1,7 +1,6 @@
 'use strict';
 angular.module('elearning').controller('LearnarticleController', ['$rootScope', '$scope', '$stateParams', '$location', 'Authentication', 'Articles',
     function($rootScope, $scope, $stateParams, $location, Authentication, Articles) {
-
         $scope.authentication = Authentication;
 
         //get one article
@@ -11,6 +10,12 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
             });
         };
 
+        $scope.vibrate = function() {
+            navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+            if (navigator.vibrate) {
+                navigator.vibrate([300, 600, 800]);
+            }
+        }
         // speed reader widget
         $scope.fastReader = function() {
             // I LOVE GLOBALS.
@@ -44,18 +49,16 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
             });
 
             buttonPlay.addEventListener('click', function() {
-                $scope.playReader ? $scope.playReader() : $scope.startReader();
+                $scope.playReader ? $scope.playReader() : $scope.startReader()
                 //
             });
 
             $scope.startReader = function() {
-                console.log("startReader");
 
                 var words = commentEl.textContent.split(/\s+/).map(processWord);
                 var currentWord = 0;
 
                 $scope.playReader = function() {
-                    console.log("playReader");
                     var word = words[currentWord++];
                     var hasPause = /^\(|[,\;\:\)]$/.test(word);
                     var hasPoint = /^\(|[\.\)]$/.test(word);
@@ -65,10 +68,12 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
                         currentTimer = setTimeout($scope.playReader, delay * (hasPause ? 3 : hasPoint ? 5 : 1));
                     } else {
                         console.log("Termine!");
+                        $scope.vibrate();
                         $scope.$apply(function() {
                             $scope.isPlaying = 0;
                         });
                     }
+
                     //progress bar
                     $scope.progressBar(currentWord, words);
 
@@ -90,21 +95,8 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
                     });
                 }
 
-                 $scope.rewindReader = function() {
-                    console.log("rewindReader");
-
-                    clearTimeout(currentTimer);
-                    
-                // if ($scope.isPlaying == 0) {
-                //     $scope.playReader();
-                // }
-
-                    $scope.$apply(function() {
-                        $scope.isPlaying = 0;
-                    });
-                }
-
                 clearTimeout(currentTimer);
+
                 $scope.playReader();
             }
 
@@ -152,9 +144,6 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
                 wordEl.style.left = ((readerEl.clientWidth / 2) - centerOffsetX) + 'px';
                 wordEl.style.top = ((readerEl.clientHeight / 2) - centerOffsetY) + 'px';
             }
-
-
-
         };
 
         //Angular eof
