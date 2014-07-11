@@ -4,13 +4,13 @@
 		<h1>Tus Articulos</h1>
 	</div>
 
-	<div class="list-group">
+	<div class="list-group myArticles">
 
-		<a data-ng-repeat="article in articles" data-ng-href="#!/learnarticle/{{article._id}}" class="list-group-item">
+		<a data-ng-repeat="article in articles" data-ng-href="#!/{{article.arType}}/{{article._id}}" class="list-group-item" class="{{article.arType}}">
 			<h4 class="list-group-item-heading" data-ng-bind="article.title"></h4>
-			<!-- <p class="list-group-item-text" data-ng-bind="article.content"></p> -->
+		    <!-- <p> Status: {{article.status}}</p>	 -->
+		    {{article.arType}}
 		</a>
-
 	</div>
 
 </section>

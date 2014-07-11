@@ -1,0 +1,904 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"cur",
+				"cursor"
+			],
+			[
+				"has",
+				"hasPoint"
+			],
+			[
+				"start",
+				"startReader"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"spe",
+				"speed"
+			],
+			[
+				"sped",
+				"speedPosition"
+			],
+			[
+				"current",
+				"currentSpeed"
+			],
+			[
+				"but",
+				"buttonSlider"
+			],
+			[
+				"progre",
+				"progresar"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"word",
+				"words"
+			],
+			[
+				"read",
+				"readProgress"
+			],
+			[
+				"pro",
+				"progressbar"
+			],
+			[
+				"el",
+				"elemval"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"cw",
+				"currentWord"
+			],
+			[
+				"borde",
+				"border-radius"
+			],
+			[
+				"sp",
+				"speed"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"v",
+				"value"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"art",
+				"articuloObj"
+			],
+			[
+				"fin",
+				"findAllArticulos"
+			],
+			[
+				"Ser",
+				"SerieTV"
+			],
+			[
+				"de",
+				"deleteSerieTV"
+			],
+			[
+				"find",
+				"findByID"
+			],
+			[
+				"se",
+				"send"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"head",
+				"header	Tag"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"cl",
+				"clear"
+			],
+			[
+				"ta",
+				"target	Attr"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"Entr",
+				"Entryless_Web"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "public/modules/elearning/controllers/learnroute.client.controller.js",
+			"settings":
+			{
+				"buffer_size": 413,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/modules/elearning/views/learnroute.client.view.html",
+			"settings":
+			{
+				"buffer_size": 648,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/modules/elearning/elearning.client.module.js",
+			"settings":
+			{
+				"buffer_size": 132,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/modules/elearning/views/article-video.client.view.html",
+			"settings":
+			{
+				"buffer_size": 673,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/routes/articles.server.routes.js",
+			"settings":
+			{
+				"buffer_size": 799,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/modules/elearning/config/elearning.client.routes.js",
+			"settings":
+			{
+				"buffer_size": 663,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/modules/elearning/controllers/learnarticle.client.controller.js",
+			"settings":
+			{
+				"buffer_size": 5532,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 47.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"HTMLPrettify: Set `node` Path"
+			],
+			[
+				"htmlprettify",
+				"HTMLPrettify"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"npm",
+				"Package Control: Remove Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"view.run_command(\"htmlprettify\")",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/public/modules/elearning/config/elearning.client.routes.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/public/modules/elearning/controllers/article-video.client.controller.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/public/modules/elearning/views/article-video.client.view.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/public/config.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/public/modules/elearning/controllers/learnarticle.client.controller.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/public/modules/elearning/views/learnarticle.client.view.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/public/modules/elearning/views/learnvideo.client.view.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/public/modules/elearning/views/learnroute.client.view.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/public/modules/elearning/controllers/learnvideo.client.controller.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/bower.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/public/application.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/package.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/public/modules/elearning/controllers/learnroute.client.controller.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/public/modules/articles/controllers/articles.client.controller.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/public/modules/articles/views/view-article.client.view.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/public/modules/articles/views/edit-article.client.view.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/public/modules/articles/views/create-article.client.view.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/app/controllers/articles.server.controller.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/app/models/article.server.model.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/public/modules/articles/views/list-articles.client.view.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/lifecircle/lcircle/packages/articles/public/views/view.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/server.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/lifecircle/lcircle/packages/articles/public/views/create.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/lifecircle/lcircle/packages/articles/server/models/article.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanjs/Enpower.txt",
+		"/Applications/XAMPP/xamppfiles/htdocs/lifecircle/lcircle/packages/articles/public/controllers/articles.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/lifecircle/lcircle/packages/articles/public/views/list.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/lifecircle/lcircle/packages/system/public/assets/css/common.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/lifecircle/lcircle/packages/articles/public/views/edit.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/lifecircle/lcircle/packages/articles/public/services/articles.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/lifecircle/lcircle/packages/articles/server/controllers/articles.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/lifecircle/lcircle/packages/system/public/controllers/index.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/lifecircle/lcircle/packages/system/public/views/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/lifecircle/lcircle/packages/system/public/tests/index.spec.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/lifecircle/lcircle/packages/system/public/views/header.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/smartlife/smlife/packages/system/public/views/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/smartlife/smlife/packages/system/public/controllers/header.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/smartlife/smlife/packages/system/public/views/header.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/smartlife/smlife/package.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/smartlife/smlife/smlife.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/smartlife/smlife/public/core.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/smartlife/smlife/public/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/smartlife/smlife/articulo-controller.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/smartlife/smlife/articulo-model.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanpnl/mpnl/server 2.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanpnl/mpnl/server.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanpnl/mpnl/speed.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanpnl/mpnl/packages/system/public/views/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/smartlife/smlife/packages/articles/public/views/view.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanpnl/mpnl/package.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/smartlife/smlife/packages/articles/public/assets/css/articles.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanpnl/mpnl/node_modules/.bin/mean",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanpnl/appnl/articulo-controller.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanpnl/mpnl/node_modules/meanio/node_modules/npm/test/packages/npm-test-bundled-git/minimatch-expected.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanpnl/mpnl/bower_components/jquery/src/effects/animatedSelector.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanpnl/mpnl/config/assets.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanpnl/mpnl/bower.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/meanpnl/mpnl/packages/modulo/public/assets/css/modulo.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/NewUserCheck.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/appnl/controller.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/appnl/package.json",
+		"/Users/asael2/Desktop/spritz-speed-reading-v2-bookmarklet-edition/js/index.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/appnl/speed.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/appnl/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/appnl/server.js",
+		"/Users/asael2/Desktop/OpenSpritz-master/spritz.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/appnl/articulo.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/appnl/serietv.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/NLPApp/app/scripts/main2.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/NLPApp/app/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/b2b/src/Orbiion/StatsBundle/Resources/public/css/instats.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/b2b/src/Orbiion/StatsBundle/Resources/views/base.html.twig",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/b2b/src/Orbiion/StatsBundle/Resources/public/css/style_dashboard.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/style.css",
+		"/Users/asael2/Library/Application Support/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/b2b/src/Orbiion/StatsBundle/Resources/views/Default/bills.html.twig",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/b2b/bower.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/instats/accpkg.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/instats/users.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/instats/left-menu-instats.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/instats/suppliers.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/ui/head.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/instats/1index.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/css/style_dashboard.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/instats/index.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/ui/left-menu-instats.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/ui/left-menu.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/404.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/config.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/ui/header.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/instats/instats.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/IPPDotNetDevKit.2.1.7.0.nupkg",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/import.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/ui/footer.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/ui/dashboard-page.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/ui/fullayout.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/ui/index.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/ui/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/b2b/vendor/symfony/symfony/src/Symfony/Component/Process/Tests/ProcessInSigchildEnvironment.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/MYOB_Entryless/AccountRight_ContactSample_PHP-master/scripts/functions.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/jquery-ui-1.8.18.custom/development-bundle/demos/draggable/constrain-movement.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/jquery-ui-1.8.18.custom/development-bundle/demos/datepicker/icon-trigger.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/jquery-ui-1.8.18.custom/development-bundle/demos/button/icons.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/fonts/IcoMoon.svg",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/ImportCSV.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/b2b/src/Orbiion/B2BBundle/Resources/public/vendor/modernizr/feature-detects/quota-management-api.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/interfaz/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/stripe-php-1.8.0/test/Stripe/InvoiceTest.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/openid-php-openid-dbd9d3e/Auth/OpenID/Interface.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/index.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/Dashboard.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/DbChanges_Alex.txt",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/interfaz/guiders.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/interfaz/guiders.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/interfaz/floating-1.12.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/interfaz/entryless.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/interfaz/css",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/interfaz/bootstrap.min.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/headerStats.php",
+		"/Users/asael2/Desktop/template_layentr.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/b2b/web/app_dev.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/b2b/src/Orbiion/B2BBundle/Controller/InstatsController.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/lib/classes/Swift/Mime/HeaderEncoder.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/header.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/b2b/app/Resources/views/base.html.twig",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/b2b/src/Orbiion/B2BBundle/Resources/views/Hello/hello.html.twig",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/b2b/src/Orbiion/B2BBundle/Resources/views/layout.html.twig",
+		"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/b2b/app/config/config_dev.yml"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Applications/XAMPP/xamppfiles/htdocs/meanjs",
+			"/Applications/XAMPP/xamppfiles/htdocs/lifecircle/lcircle",
+			"",
+			"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web",
+			"/Applications/XAMPP/xamppfiles/htdocs/entryless/Entryless_Web/js/Guiders-JS",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"myYoutube",
+			"playReader",
+			"startReader",
+			"h1",
+			"span",
+			"overflow",
+			"sliderValue",
+			"changeSpeed",
+			"sliderValue",
+			"readerb",
+			"speedControl",
+			"span",
+			"button",
+			"displayNextWord",
+			"dynamic",
+			"progresar",
+			"this",
+			"progressbar",
+			");\n",
+			"progress",
+			"wpmel",
+			"speedPosition",
+			"progressbar",
+			"dynamic",
+			"progressbar",
+			"prog",
+			"progressBar",
+			"progress",
+			"buttonEl",
+			"#reader",
+			"LearnrouteController",
+			"data-ng-model",
+			"arType",
+			"artype",
+			"ng-model",
+			"arType",
+			"formData.chickenEgg",
+			"div",
+			"=",
+			"content",
+			"app",
+			"IndexController",
+			");",
+			"updateSerieTV",
+			"genero",
+			"temporadas",
+			"SerieTV",
+			"temporada",
+			"titulo",
+			"articulo",
+			"SerieTV",
+			"seriestv",
+			"articulo",
+			"SerieTV",
+			"serietv",
+			"SerieTV",
+			"serietv",
+			"configure",
+			"\"images/",
+			"../fonts",
+			"png",
+			"template_layentr_files",
+			"half-testi",
+			"google",
+			"sessio",
+			"No_Package_box",
+			"None.png",
+			"src='images/None.png",
+			"MYOB.png",
+			"MYOB",
+			"xeroconn",
+			"600",
+			"my-company col-md-5 col-sm-5 pull-left",
+			"<!---left -menu ----->",
+			"$cnt",
+			"xeroconn",
+			"intuitPlatformConnectButton",
+			"xeroc",
+			"QBsync",
+			"gTour",
+			"main-task",
+			"formpart",
+			"accounting_link"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"fonts"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "public/modules/elearning/controllers/learnroute.client.controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 413,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								402,
+								402
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "public/modules/elearning/views/learnroute.client.view.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 648,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								236,
+								236
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/modules/elearning/elearning.client.module.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 132,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "public/modules/elearning/views/article-video.client.view.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 673,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								340,
+								340
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "app/routes/articles.server.routes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 799,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "public/modules/elearning/config/elearning.client.routes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 663,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								663,
+								663
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public/modules/elearning/controllers/learnarticle.client.controller.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 5532,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.42905365566,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 386.0
+	},
+	"project": "appnl.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"new",
+				"NewUserCheck.php"
+			],
+			[
+				"instats/in",
+				"instats/index.php"
+			],
+			[
+				"instat",
+				"instats/instats.css"
+			],
+			[
+				"dashboard.cs",
+				"css/style_dashboard.css"
+			],
+			[
+				"interfaz",
+				"interfaz/index.html"
+			],
+			[
+				"header",
+				"header.php"
+			],
+			[
+				"app_dev",
+				"b2b/web/app_dev.php"
+			],
+			[
+				"newus",
+				"NewUserCheck.php"
+			],
+			[
+				"log",
+				"Log.php"
+			],
+			[
+				"composer.json",
+				"b2b/composer.json"
+			],
+			[
+				"appde",
+				"b2b/web/app_dev.php"
+			],
+			[
+				"qbs",
+				"Entryless_Web/QBsync.php"
+			],
+			[
+				"guides",
+				"Entryless_Web/js/Guiders-JS/guiders.js"
+			],
+			[
+				"entryless.css",
+				"Entryless_Web/css/entryless.css"
+			],
+			[
+				"left-",
+				"Entryless_Web/inc/left-menu.php"
+			],
+			[
+				"left",
+				"Entryless_Web/left_menu.php"
+			],
+			[
+				"guider",
+				"Entryless_Web/js/Guiders-JS/guiders.js"
+			],
+			[
+				"qbsy",
+				"Entryless_Web/QBsync.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 278.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

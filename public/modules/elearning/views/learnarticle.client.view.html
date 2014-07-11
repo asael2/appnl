@@ -14,8 +14,7 @@
 				</div>
 	    	</div>
 	    	
-	    	<progressbar value="readProgress" ></progressbar>	
-			
+	    	<progressbar value="readProgress" ></progressbar>			
 			<br>
 			
 			<ul class="list-inline speedControl">
@@ -33,11 +32,8 @@
 			</ul>	
 		</div>
 		
-		<div class="page-content" ng-show="article.content == texto" class="extras">
 			<p id="comment" class="content" data-ng-bind="article.content" ></p>
-			<p> Titulo Link: {{article.resource.description}}</p>
-		    <p> Recurso Link: {{article.resource.url}}</p>
-		    <p> Status: {{article.status}}</p>
+		<div class="page-content" ng-show="article.content == texto" class="extras">
 		</div>
 
 	</div>
