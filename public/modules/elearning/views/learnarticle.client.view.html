@@ -2,8 +2,10 @@
 
 	<div class="articleText">
 
-		<div class="page-header">
+		<div class="page-header" ng-animate=" 'animate' ">
 			<h3 data-ng-bind="article.title"></h3>
+			<span ng-show="vibrate" class="statusIconOk glyphicon {{statusIcon}}" > </span>
+			<p>{{article.status}}</p>
 		</div>
 
 	    <div class="readerContainer" data-ng-init="fastReader()">
@@ -32,8 +34,8 @@
 			</ul>	
 		</div>
 		
-			<p id="comment" class="content" data-ng-bind="article.content" ></p>
 		<div class="page-content" ng-show="article.content == texto" class="extras">
+			<p id="comment" class="content" data-ng-bind="article.content" ></p>
 		</div>
 
 	</div>

@@ -1,10 +1,10 @@
 'use strict';
 
 (function() {
-	// Audio Controller Spec
-	describe('Audio Controller Tests', function() {
+	// Article audio Controller Spec
+	describe('Article audio Controller Tests', function() {
 		// Initialize global variables
-		var AudioController,
+		var ArticleAudioController,
 			scope,
 			$httpBackend,
 			$stateParams,
@@ -44,8 +44,8 @@
 			$httpBackend = _$httpBackend_;
 			$location = _$location_;
 
-			// Initialize the Audio controller.
-			AudioController = $controller('AudioController', {
+			// Initialize the Article audio controller.
+			ArticleAudioController = $controller('ArticleAudioController', {
 				$scope: scope
 			});
 		}));

@@ -1,11 +1,3 @@
-// 'use strict';
-
-// angular.module('elearning').controller('ArticleVideoController', ['$scope',
-//     function($scope) {
-//         console.log("Controlador de video article")
-//     }
-// ]);
-
 'use strict';
 angular.module('elearning').controller('ArticleVideoController', ['$rootScope', '$scope', '$stateParams', '$location', 'Authentication', 'Articles',
     function($rootScope, $scope, $stateParams, $location, Authentication, Articles) {

@@ -7,7 +7,7 @@ angular.module('elearning').config(['$stateProvider',
         $stateProvider.
         state('audio', {
             url: '/audio/:articleId',
-            templateUrl: 'modules/elearning/views/audio.client.view.html'
+            templateUrl: 'modules/elearning/views/article-audio.client.view.html'
         }).
         state('article-video', {
             url: '/video/:articleId',

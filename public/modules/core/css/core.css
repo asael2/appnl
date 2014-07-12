@@ -85,7 +85,7 @@ body{
     vertical-align: middle;
 } 
 .speedControl > li:nth-child(2){
-    width: 60%;
+    width: 50%;
 }
 .speedMore, .speedLess{
     cursor: pointer;
@@ -109,7 +109,11 @@ body{
     color: #828282;
 }
 
-
-
-
+.statusIconOk {
+    float: right;
+    margin-top: -40px;
+    background: whitesmoke;
+    padding: 10px;
+    border-radius: 20px;
+}
 

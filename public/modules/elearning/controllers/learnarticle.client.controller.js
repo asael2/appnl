@@ -10,12 +10,20 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
             });
         };
 
-        $scope.vibrate = function() {
+        $scope.vibrate = function(vibrate, wait, vibrate2) {
             navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
             if (navigator.vibrate) {
-                navigator.vibrate([300, 600, 800]);
+                navigator.vibrate([vibrate, wait, vibrate2]);
             }
         }
+
+        $scope.finishedArticle = function() {
+            console.log("Article finished!");
+            $scope.vibrate(300, 600, 600);
+            $scope.article.status = 1;
+            $scope.statusIcon = "glyphicon-ok";
+        }
+
         // speed reader widget
         $scope.fastReader = function() {
             // I LOVE GLOBALS.
@@ -67,10 +75,9 @@ angular.module('elearning').controller('LearnarticleController', ['$rootScope', 
                     if (currentWord !== words.length) {
                         currentTimer = setTimeout($scope.playReader, delay * (hasPause ? 3 : hasPoint ? 5 : 1));
                     } else {
-                        console.log("Termine!");
-                        $scope.vibrate();
                         $scope.$apply(function() {
                             $scope.isPlaying = 0;
+                            $scope.finishedArticle();
                         });
                     }
 
