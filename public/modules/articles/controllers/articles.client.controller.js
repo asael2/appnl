@@ -1,8 +1,9 @@
 'use strict';
 
-angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles',
-    function($scope, $stateParams, $location, Authentication, Articles) {
+angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles', 'Users', '$http',
+    function($scope, $stateParams, $location, Authentication, Articles, Users, $http) {
         $scope.authentication = Authentication;
+        $scope.user = Authentication.user;
 
         $scope.create = function() {
             var article = new Articles({
@@ -61,6 +62,29 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
             $scope.article = Articles.get({
                 articleId: $stateParams.articleId
             });
+        };
+        $scope.save2me = function(art) {};
+
+        $scope.addArt2me = function() {
+            var currentArt = this.article;
+
+            var euser = new Users($scope.user);
+
+            console.log(currentArt._id + " Articulo:: " + currentArt + " Usuario:: " + euser);
+
+            euser.userArticles.push(currentArt);
+
+            console.log("voy a euser");
+            // euser.$update();
+
+            euser.$update(
+                function() {
+                    console.log("Articulo agregado user.userArticles: " + user.userArticles);
+                },
+                function(errorResponse) {
+                    $scope.error = errorResponse.data.message;
+                    console.log("error actualizando");
+                });
         };
 
     }

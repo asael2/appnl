@@ -1,12 +1,12 @@
 <section data-ng-controller="LearnrouteController" data-ng-init="find()">
 	
 	<div class="page-header">
-		<h1>Tus Articulos</h1>
+		<h1>Mis Articulos</h1>
 	</div>
 
 	<div class="list-group myArticles">
-
-		<a data-ng-repeat="article in articles" data-ng-href="#!/{{article.arType}}/{{article._id}}" class="list-group-item" class="{{article.arType}}">
+	{{user}}
+		<a data-ng-repeat="article in misArticulos" data-ng-href="#!/{{article.arType}}/{{article._id}}" class="list-group-item" class="{{article.arType}}">
 			<h4 class="list-group-item-heading" data-ng-bind="article.title"></h4>
 		    <!-- <p> Status: {{article.status}}</p>	 -->
 		    {{article.arType}}
