@@ -63,7 +63,6 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
                 articleId: $stateParams.articleId
             });
         };
-        $scope.save2me = function(art) {};
 
         $scope.addArt2me = function() {
             var currentArt = this.article;
@@ -74,9 +73,9 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 
             euser.userArticles.push(currentArt);
 
-            console.log("voy a euser");
-            // euser.$update();
+            console.log(euser.userArticles.length);
 
+            // euser.$update();
             euser.$update(
                 function() {
                     console.log("Articulo agregado user.userArticles: " + user.userArticles);
