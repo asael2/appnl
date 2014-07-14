@@ -10,7 +10,7 @@ module.exports = function(app) {
     var users = require('../../app/controllers/users');
     app.route('/users/me').get(users.me);
     app.route('/users').put(users.update);
-    app.route('/users?userArticles').put(users.updateMyArticles);
+    // app.route('/users?userArticles').put(users.updateMyArticles);
     // PUT http: //localhost:3000/users?userArticles=53c036055279a90000165c63
     app.route('/users/password').post(users.changePassword);
     app.route('/users/accounts').delete(users.removeOAuthProvider);

@@ -2,9 +2,9 @@
 
 angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles', 'Users', '$http',
     function($scope, $stateParams, $location, Authentication, Articles, Users, $http) {
+
         $scope.authentication = Authentication;
         $scope.user = Authentication.user;
-
         $scope.myUser = new Users($scope.user);
 
         $scope.create = function() {

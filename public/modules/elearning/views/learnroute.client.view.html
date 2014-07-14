@@ -1,16 +1,17 @@
 <section data-ng-controller="LearnrouteController" data-ng-init="find()">
-	
 	<div class="page-header">
 		<h1>Mis Articulos</h1>
 	</div>
+	<div class="list-group">
 
-	<div class="list-group myArticles">
-	{{user}}
-		<a data-ng-repeat="article in misArticulos" data-ng-href="#!/{{article.arType}}/{{article._id}}" class="list-group-item" class="{{article.arType}}">
+		<a data-ng-repeat="article in misArticulos" class="list-group-item">
 			<h4 class="list-group-item-heading" data-ng-bind="article.title"></h4>
-		    <!-- <p> Status: {{article.status}}</p>	 -->
-		    {{article.arType}}
+			<button data-ng-click="addArt2me()" class="glyphicon glyphicon-minus remArt2me" ></button>
+			<p> {{article.content | limitTo:140}} </p>
 		</a>
-	</div>
 
+	</div>
+	<div class="alert alert-warning text-center" data-ng-if="articles.$resolved && !articles.length">
+		No articles yet, why don't you <a href="/#!/articles/create">create one</a>?
+	</div>
 </section>
