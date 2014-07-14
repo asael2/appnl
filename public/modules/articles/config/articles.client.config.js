@@ -7,8 +7,8 @@ angular.module('articles').run(['Menus',
         Menus.addMenuItem('topbar', 'Articulos', 'articles', 'dropdown', '/articles(/create)?');
         Menus.addSubMenuItem('topbar', 'articles', 'Mis Articulos', 'learn');
         Menus.addSubMenuItem('topbar', 'articles', 'Todos los Articulos', 'articles');
-        if (user.roles[1] === 'admin') {
-            Menus.addSubMenuItem('topbar', 'articles', 'Nuevo Articulo', 'articles/create');
-        }
+        // if (user.roles[1] === 'admin') {
+        Menus.addSubMenuItem('topbar', 'articles', 'Nuevo Articulo', 'articles/create', 'admin');
+        // }
     }
 ]);

@@ -5,46 +5,24 @@ angular.module('articles').controller('LearnrouteController', ['$scope', '$state
 
         $scope.authentication = Authentication;
         $scope.user = Authentication.user;
+        $scope.myUser = new Users($scope.user);
         $scope.misArticulos = {};
-        // $scope.myUser = new Users($scope.user);
-        // $scope.userArticles = $scope.myUser.userArticles;
-        var anArticle = new Articles($scope.article);
+
         var myArticles = $scope.user.userArticles;
 
-        $scope.find = function() {
-            var articlesLength = myArticles.length;
+        var articlesLength = myArticles.length;
 
+        $scope.find = function() {
             for (var i = 0; i < articlesLength; i++) {
-                console.log(myArticles[i]);
-                anArticle = Articles.get({
+                // console.log(myArticles[i]);
+                $scope.misArticulos[i] = Articles.get({
                     articleId: myArticles[i]
                 });
-                $scope.misArticulos[i] = anArticle;
-                console.log($scope.misArticulos[i]);
+                // console.log($scope.misArticulos[i]);
             }
-
-            // console.log(oneArtId);
 
         }
 
     }
-    // $scope.misArticulos = Articles.query({
-    //     //userArticles: $scope.userArticles
 
-    // }, function(err, docs) {
-    //     console.log("lololol");
-    // });
-    // console.log(misArticulos);
-
-
-
-    //     $scope.findOne = function() {
-    //         $scope.article = Articles.get({
-    //             articleId: $stateParams.articleId
-    //         });
-    //         console.log($scope.articles);
-    //     };
-    // }
 ]);
-
-// articleByID = function(req, res, next, id)
