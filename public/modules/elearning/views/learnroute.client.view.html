@@ -1,3 +1,16 @@
-<section data-ng-controller="LearnrouteController">
-	This is the Learnroute view
+<section data-ng-controller="LearnrouteController" data-ng-init="find()">
+	
+	<div class="page-header">
+		<h1>Mis Articulos</h1>
+	</div>
+
+	<div class="list-group myArticles">
+	{{user}}
+		<a data-ng-repeat="article in misArticulos" data-ng-href="#!/{{article.arType}}/{{article._id}}" class="list-group-item" class="{{article.arType}}">
+			<h4 class="list-group-item-heading" data-ng-bind="article.title"></h4>
+		    <!-- <p> Status: {{article.status}}</p>	 -->
+		    {{article.arType}}
+		</a>
+	</div>
+
 </section>

@@ -1,3 +1,6 @@
+body{
+    background-color: #ccc;
+}
 .content {
 	margin-top: 50px;
 }
@@ -7,3 +10,110 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
 	display: none !important;
 }
+
+
+.readerContainer{
+    background: currentcolor;
+    -webkit-box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.75);
+    box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.75);
+    padding: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.readerBox{
+    background:whitesmoke;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+
+.reader {
+    padding: 20px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-size: 2.6em;
+    font-family: verdana;
+    margin-bottom: 30px;
+    position: relative;
+    height: 2.2em;
+    line-height: 2.2em;
+    display: block;
+    margin: auto;
+}
+
+.reader::before, .reader::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+    height: 10px;
+    background-color: black;
+    width: 2px;
+    top: 0;
+}
+
+.reader::after {
+    top: auto;
+    bottom: 0;
+}
+
+.word {
+    position: absolute;
+}
+
+.highlight {
+    color: #c00;
+}
+
+.progress{ 
+    height: 0.14em;
+    margin-bottom: 0;
+    width: 98.4%;
+    margin: auto;
+}
+    .progress-bar{
+         background: red;
+    }
+
+.speedControl{
+    text-align: center;
+} 
+.speedControl li{
+    line-height: 21px;
+    vertical-align: middle;
+} 
+.speedControl > li:nth-child(2){
+    width: 50%;
+}
+.speedMore, .speedLess{
+    cursor: pointer;
+}
+
+.readerControllButtons{
+    font-size: 2.2em;
+    text-align: center;
+    max-width: 280px;
+    margin: auto;
+    padding-left: 0;
+}
+
+.readerControllButtons li{
+    cursor: pointer;
+    margin: 20px;
+    color: #828282;
+}
+.sliderValue{
+    text-align: center;
+    color: #828282;
+}
+
+.statusIconOk {
+    float: right;
+    margin-top: -40px;
+    background: whitesmoke;
+    padding: 10px;
+    border-radius: 20px;
+}
+
