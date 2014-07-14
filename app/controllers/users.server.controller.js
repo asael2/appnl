@@ -132,6 +132,7 @@ exports.update = function(req, res) {
 };
 
 exports.updateMyArticles = function(req, res) {
+    alert("hola sever");
     // Init Variables
     var user = req.user;
     var message = null;

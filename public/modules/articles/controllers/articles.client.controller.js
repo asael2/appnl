@@ -64,27 +64,6 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
             });
         };
 
-        $scope.addArt2me = function() {
-            var currentArt = this.article;
-
-            var euser = new Users($scope.user);
-
-            console.log(currentArt._id + " Articulo:: " + currentArt + " Usuario:: " + euser);
-
-            euser.userArticles.push(currentArt);
-
-            console.log(euser.userArticles.length);
-
-            // euser.$update();
-            euser.$update(
-                function() {
-                    console.log("Articulo agregado user.userArticles: " + user.userArticles);
-                },
-                function(errorResponse) {
-                    $scope.error = errorResponse.data.message;
-                    console.log("error actualizando");
-                });
-        };
 
     }
 ]);
