@@ -3,13 +3,13 @@
 angular.module('users').controller('MyArticlesController', ['$scope', 'Articles', 'Users',
     function($scope, Articles, Users, User) {
 
-        var myUser = new Users($scope.user);
+
 
         $scope.addArt2me = function(req, res) {
 
             var myArticle = new Articles($scope.article);
 
-            var userArticles = myUser.userArticles.push(myArticle._id);
+            var userArticles = $scope.myUser.userArticles.push(myArticle._id);
             var laid = $scope.article._id;
             var artid = myArticle._id;
 
@@ -17,7 +17,7 @@ angular.module('users').controller('MyArticlesController', ['$scope', 'Articles'
 
             console.log(user.userArticles.length);
 
-            myUser.$update(function(response) {
+            $scope.myUser.$update(function(response) {
                 console.log("Actualize!! con : " + user.userArticles.length + "__" + response);
             }, function(errorResponse) {
                 console.log("updatError: " + myArticle._id + errorResponse);
