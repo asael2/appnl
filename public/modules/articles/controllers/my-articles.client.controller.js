@@ -3,9 +3,9 @@
 angular.module('users').controller('MyArticlesController', ['$scope', 'Articles', 'Users',
     function($scope, Articles, Users, User) {
 
-        $scope.addArt2me = function(req, res) {
-
-            var myArticle = new Articles($scope.article);
+        $scope.addArt2me = function(elArticulo) {
+            // console.log(elArticulo);
+            var myArticle = elArticulo;
 
             if ($scope.myUser.userArticles.indexOf(myArticle._id) > -1) {
                 alert("Ya en array");
@@ -25,17 +25,22 @@ angular.module('users').controller('MyArticlesController', ['$scope', 'Articles'
         };
 
 
-        $scope.remArt2me = function(req, res) {
-            var myArticle = new Articles($scope.article);
-            $scope.myUser.userArticles.pop(myArticle._id);
+        $scope.remArt2me = function(elArticulo) {
+            var myArticle = elArticulo;
+
+            $scope.myUser.userArticles.splice(myArticle._id, 1);
+
             $scope.myUser.$update(function(response) {
-                console.log("Actualize!! con : " + $scope.myUser.userArticles);
+                console.log("Eliminando a: " + $scope.myUser.userArticles);
+
+                $scope.misArticulos = $scope.myUser.userArticles;
+
             }, function(errorResponse) {
                 console.log("updatError: " + myArticle._id + errorResponse.data);
                 $scope.error = errorResponse;
             });
 
-            $scope.misArticulos = $scope.myUser.userArticles
+
             // myArticle.remove()
             // console.log($scope);
         };

@@ -6,7 +6,7 @@
 
 		<a data-ng-controller="MyArticlesController" data-ng-repeat="article in misArticulos" class="list-group-item">
 			<h4 class="list-group-item-heading" data-ng-bind="article.title"></h4>
-			<button data-ng-click="remArt2me()" class="glyphicon glyphicon-minus remArt2me" ></button>
+			<button data-ng-click="remArt2me(article)" class="glyphicon glyphicon-minus remArt2me" ></button>
 			<p> {{article.content | limitTo:140}} </p>
 		</a>
 
