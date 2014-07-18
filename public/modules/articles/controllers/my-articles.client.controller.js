@@ -3,15 +3,17 @@
 angular.module('users').controller('MyArticlesController', ['$scope', 'Articles', 'Users', '$location',
     function($scope, Articles, Users, User, $location) {
 
+        console.log("Mis Articulos: " + $scope.misArticulos);
+
         $scope.addArt2me = function(elArticulo) {
             var myArticle = elArticulo;
-            if ($scope.myUser.userArticles.indexOf(myArticle._id) > -1) {
+        if ($scope.myUser.userArticles.indexOf(myArticle._id) > -1) {
                 alert("Ya en array");
             } else {
-                $scope.myUser.userArticles.unshift(myArticle._id);
-                $scope.myUser.$update(function(response) {
-                    console.log("Actualize!! con : " + $scope.myUser.userArticles);
-                    $location.path("/#!/learn");
+            $scope.myUser.userArticles.unshift(myArticle._id);
+            $scope.myUser.$update(function(response) {
+                console.log("Actualize!! con : " + $scope.myUser.userArticles);
+                    // $location.path("/#!/learn");
                 }, function(errorResponse) {
                     console.log("updatError: " + myArticle._id + errorResponse.data);
                     $scope.error = errorResponse;
@@ -19,15 +21,19 @@ angular.module('users').controller('MyArticlesController', ['$scope', 'Articles'
             }
         };
 
-        $scope.remArt2me = function(elArticulo) {
+        $scope.remArt2me = function($index, elArticulo) {
             var myArticle = elArticulo;
-            var index = $scope.myUser.userArticles.indexOf(myArticle._id);
-            console.log("Mis articulos 1: " + $scope.misArticulos.length);
-            $scope.myUser.userArticles.splice(index, 1);
+        var index = $scope.myUser.userArticles.indexOf(myArticle._id);
+        $scope.myUser.userArticles.splice(index, 1);
+            // remover de mis articulos en Scope
+
+            var indice = $index;
+            // console.log("Articulo a remover:: " + $scope.misArticulos);
+            $scope.misArticulos.splice(indice, 1);
 
             //Update myUser
             $scope.myUser.$update(function(response) {
-                console.log("Mis articulos 2: " + $scope.misArticulos.length);
+                // console.log("Mis articulos 2: " + $scope.misArticulos.length);
             }, function(errorResponse) {
                 console.log("updatError: " + myArticle._id + errorResponse.data);
                 $scope.error = errorResponse;

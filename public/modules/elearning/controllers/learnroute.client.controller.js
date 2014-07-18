@@ -6,18 +6,19 @@ angular.module('articles').controller('LearnrouteController', ['$scope', '$state
         $scope.authentication = Authentication;
         $scope.user = Authentication.user;
         $scope.myUser = new Users($scope.user);
-        $scope.misArticulos = {};
-        var myArticlesArray = $scope.user.userArticles;
+        $scope.misArticulos = [];
+
+
 
         $scope.find = function() {
+            var myArticlesArray = $scope.user.userArticles;
+            console.log("Mis Articulos: " + $scope.misArticulos);
             for (var i = 0; i < myArticlesArray.length; i++) {
                 $scope.misArticulos[i] = Articles.get({
                     articleId: myArticlesArray[i]
                 });
             }
 
-            console.log(myArticlesArray);
-            console.log($scope.misArticulos);
 
         }
 
