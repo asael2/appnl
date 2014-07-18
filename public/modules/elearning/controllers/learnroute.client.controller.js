@@ -9,7 +9,6 @@ angular.module('articles').controller('LearnrouteController', ['$scope', '$state
         $scope.misArticulos = [];
 
 
-
         $scope.find = function() {
             var myArticlesArray = $scope.user.userArticles;
             console.log("Mis Articulos: " + $scope.misArticulos);

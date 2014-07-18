@@ -3,17 +3,19 @@
 angular.module('users').controller('MyArticlesController', ['$scope', 'Articles', 'Users', '$location',
     function($scope, Articles, Users, User, $location) {
 
-        console.log("Mis Articulos: " + $scope.misArticulos);
-
-        $scope.addArt2me = function(elArticulo) {
+        $scope.addArt2me = function($index, elArticulo) {
             var myArticle = elArticulo;
-        if ($scope.myUser.userArticles.indexOf(myArticle._id) > -1) {
+            var indice = $index;
+
+            if ($scope.myUser.userArticles.indexOf(myArticle._id) > -1) {
                 alert("Ya en array");
+
             } else {
-            $scope.myUser.userArticles.unshift(myArticle._id);
-            $scope.myUser.$update(function(response) {
-                console.log("Actualize!! con : " + $scope.myUser.userArticles);
-                    // $location.path("/#!/learn");
+                $scope.myUser.userArticles.unshift(myArticle._id);
+
+                $scope.myUser.$update(function(response) {
+                    console.log("Actualize!! con : " + $scope.myUser.userArticles);
+                    $scope.articles.splice(indice, 1);
                 }, function(errorResponse) {
                     console.log("updatError: " + myArticle._id + errorResponse.data);
                     $scope.error = errorResponse;
@@ -23,17 +25,14 @@ angular.module('users').controller('MyArticlesController', ['$scope', 'Articles'
 
         $scope.remArt2me = function($index, elArticulo) {
             var myArticle = elArticulo;
-        var index = $scope.myUser.userArticles.indexOf(myArticle._id);
-        $scope.myUser.userArticles.splice(index, 1);
-            // remover de mis articulos en Scope
-
+            var myArtPosition = $scope.myUser.userArticles.indexOf(myArticle._id);
             var indice = $index;
-            // console.log("Articulo a remover:: " + $scope.misArticulos);
-            $scope.misArticulos.splice(indice, 1);
-
-            //Update myUser
+            //remove article from My Articles arr
+            $scope.myUser.userArticles.splice(myArtPosition, 1);
+            //update My User
             $scope.myUser.$update(function(response) {
-                // console.log("Mis articulos 2: " + $scope.misArticulos.length);
+                //remove article obj. from rendering arr
+                $scope.misArticulos.splice(indice, 1);
             }, function(errorResponse) {
                 console.log("updatError: " + myArticle._id + errorResponse.data);
                 $scope.error = errorResponse;
