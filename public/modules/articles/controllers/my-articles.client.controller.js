@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('users').controller('MyArticlesController', ['$scope', 'Articles', 'Users',
-    function($scope, Articles, Users, User) {
+angular.module('users').controller('MyArticlesController', ['$scope', 'Articles', 'Users', '$location',
+    function($scope, Articles, Users, User, $location) {
 
         $scope.addArt2me = function(elArticulo) {
             var myArticle = elArticulo;
@@ -11,6 +11,7 @@ angular.module('users').controller('MyArticlesController', ['$scope', 'Articles'
                 $scope.myUser.userArticles.unshift(myArticle._id);
                 $scope.myUser.$update(function(response) {
                     console.log("Actualize!! con : " + $scope.myUser.userArticles);
+                    $location.path("/#!/learn");
                 }, function(errorResponse) {
                     console.log("updatError: " + myArticle._id + errorResponse.data);
                     $scope.error = errorResponse;
@@ -21,20 +22,25 @@ angular.module('users').controller('MyArticlesController', ['$scope', 'Articles'
         $scope.remArt2me = function(elArticulo) {
             var myArticle = elArticulo;
             var index = $scope.myUser.userArticles.indexOf(myArticle._id);
-            if (index > -1) {
-                $scope.myUser.userArticles.splice(index, 1);
+            console.log("Mis articulos 1: " + $scope.misArticulos.length);
+            $scope.myUser.userArticles.splice(index, 1);
 
-                $scope.myUser.$update(function(response) {
-
-                    console.log("Eliminando a: " + $scope.misArticulos);
-
-                // $scope.$apply();
-
-                }, function(errorResponse) {
-                    console.log("updatError: " + myArticle._id + errorResponse.data);
-                    $scope.error = errorResponse;
-                });
-            };
+            //Update myUser
+            $scope.myUser.$update(function(response) {
+                console.log("Mis articulos 2: " + $scope.misArticulos.length);
+            }, function(errorResponse) {
+                console.log("updatError: " + myArticle._id + errorResponse.data);
+                $scope.error = errorResponse;
+            });
         };
     }
-]);
+]).directive('stopEvent', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attr) {
+            element.bind(attr.stopEvent, function(e) {
+                e.stopPropagation();
+            });
+        }
+    };
+});

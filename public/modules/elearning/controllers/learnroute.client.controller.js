@@ -16,6 +16,9 @@ angular.module('articles').controller('LearnrouteController', ['$scope', '$state
                 });
             }
 
+            console.log(myArticlesArray);
+            console.log($scope.misArticulos);
+
         }
 
     }
