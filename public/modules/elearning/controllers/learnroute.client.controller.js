@@ -3,11 +3,14 @@
 angular.module('articles').controller('LearnrouteController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles', 'Users',
     function($scope, $stateParams, $location, Authentication, Articles, Users) {
 
+
         $scope.authentication = Authentication;
         $scope.user = Authentication.user;
+
+        if (!$scope.user) $location.path('/');
+
         $scope.myUser = new Users($scope.user);
         $scope.misArticulos = [];
-
 
         $scope.find = function() {
             var myArticlesArray = $scope.user.userArticles;
@@ -17,8 +20,6 @@ angular.module('articles').controller('LearnrouteController', ['$scope', '$state
                     articleId: myArticlesArray[i]
                 });
             }
-
-
         }
 
     }
