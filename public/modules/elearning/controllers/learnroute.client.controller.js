@@ -13,12 +13,19 @@ angular.module('articles').controller('LearnrouteController', ['$scope', '$state
         $scope.misArticulos = [];
 
         $scope.find = function() {
+
             var myArticlesArray = $scope.user.userArticles;
+
             console.log("Mis Articulos: " + $scope.misArticulos);
+
             for (var i = 0; i < myArticlesArray.length; i++) {
+                // if ($scope.misArticulos[i] != "") {
                 $scope.misArticulos[i] = Articles.get({
                     articleId: myArticlesArray[i]
                 });
+                console.log($scope.misArticulos[i] + "::Ucraine");
+                // }
+
             }
         }
 
