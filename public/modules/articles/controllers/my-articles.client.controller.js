@@ -23,10 +23,13 @@ angular.module('users').controller('MyArticlesController', ['$scope', 'Articles'
             }
         };
 
-        $scope.remArt2me = function($index, elArticulo) {
+        $scope.remArt2me = function($index, elArticulo, $event) {
+            $event.preventDefault();
+
             var myArticle = elArticulo;
             var myArtPosition = $scope.myUser.userArticles.indexOf(myArticle._id);
             var indice = $index;
+            // $index.stopPropagation();
             //remove article from My Articles arr
             $scope.myUser.userArticles.splice(myArtPosition, 1);
             //update My User
