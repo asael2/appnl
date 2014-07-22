@@ -29,7 +29,6 @@ angular.module('users').controller('MyArticlesController', ['$scope', 'Articles'
             var myArticle = elArticulo;
             var myArtPosition = $scope.myUser.userArticles.indexOf(myArticle._id);
             var indice = $index;
-            // $index.stopPropagation();
             //remove article from My Articles arr
             $scope.myUser.userArticles.splice(myArtPosition, 1);
             //update My User
@@ -42,13 +41,4 @@ angular.module('users').controller('MyArticlesController', ['$scope', 'Articles'
             });
         };
     }
-]).directive('stopEvent', function() {
-    return {
-        restrict: 'A',
-        link: function(scope, element, attr) {
-            element.bind(attr.stopEvent, function(e) {
-                e.stopPropagation();
-            });
-        }
-    };
-});
+]);
