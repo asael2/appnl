@@ -167,7 +167,6 @@ exports.updateMyArticles = function(req, res) {
         });
     }
 };
-
 /**
  * Change Password
  */

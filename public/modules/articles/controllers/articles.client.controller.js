@@ -2,8 +2,12 @@
 
 angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles', 'Users', '$http',
     function($scope, $stateParams, $location, Authentication, Articles, Users, $http) {
+
         $scope.authentication = Authentication;
         $scope.user = Authentication.user;
+        $scope.myUser = new Users($scope.user);
+        $scope.myUser.userArticles = $scope.user.userArticles;
+
 
         $scope.create = function() {
             var article = new Articles({
@@ -64,6 +68,11 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
             });
         };
 
+        $scope.filterAlreadyAdded = function(item) {
+            // console.log("Filtrando " + item._id);
+            return ($scope.myUser.userArticles.indexOf(item._id) == -1);
+
+        };
 
     }
 ]);

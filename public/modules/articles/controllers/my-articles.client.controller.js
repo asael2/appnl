@@ -1,67 +1,44 @@
 'use strict';
 
-angular.module('users').controller('MyArticlesController', ['$scope', 'Articles', 'Users',
-    function($scope, Articles, Users, User) {
+angular.module('users').controller('MyArticlesController', ['$scope', 'Articles', 'Users', '$location',
+    function($scope, Articles, Users, User, $location) {
 
-        var myUser = new Users($scope.user);
+        $scope.addArt2me = function($index, elArticulo) {
+            var myArticle = elArticulo;
+            var indice = $index;
 
-        $scope.addArt2me = function(req, res) {
+            if ($scope.myUser.userArticles.indexOf(myArticle._id) > -1) {
+                alert("Ya en array");
 
-            var myArticle = new Articles($scope.article);
+            } else {
+                $scope.myUser.userArticles.unshift(myArticle._id);
 
-            var userArticles = myUser.userArticles.push(myArticle._id);
-            var laid = $scope.article._id;
-            var artid = myArticle._id;
-
-            console.log("User ID :: " + laid + " :: artid " + artid);
-
-            console.log(user.userArticles.length);
-
-            myUser.$update(function(response) {
-                console.log("Actualize!! con : " + user.userArticles.length + "__" + response);
-            }, function(errorResponse) {
-                console.log("updatError: " + myArticle._id + errorResponse);
-                $scope.error = errorResponse;
-            });
-
-
-            // myUser.$update({
-            //     userArticles: artid
-            // })
-            // console.log(user.userArticles.length);
-
-            // myUser.findByIdAndUpdate(user, {
-            //     userArticles: userArticles
-            // }, function(err, req) {
-            //     if (!err) console.log(">>Articulo Actualizado.");
-            //     else console.log('Error:' + err);
-            // });
+                $scope.myUser.$update(function(response) {
+                    console.log("Actualize!! con : " + $scope.myUser.userArticles);
+                    $scope.articles.splice(indice, 1);
+                }, function(errorResponse) {
+                    console.log("updatError: " + myArticle._id + errorResponse.data);
+                    $scope.error = errorResponse;
+                });
+            }
         };
 
-        // myUser.push({
-        //     userArticles: myArticle
-        // }).update({
-        // _id: myUser
-        // });
+        $scope.remArt2me = function($index, elArticulo, $event) {
+            $event.preventDefault();
 
-
-
+            var myArticle = elArticulo;
+            var myArtPosition = $scope.myUser.userArticles.indexOf(myArticle._id);
+            var indice = $index;
+            //remove article from My Articles arr
+            $scope.myUser.userArticles.splice(myArtPosition, 1);
+            //update My User
+            $scope.myUser.$update(function(response) {
+                //remove article obj. from rendering arr
+                $scope.misArticulos.splice(indice, 1);
+            }, function(errorResponse) {
+                console.log("updatError: " + myArticle._id + errorResponse.data);
+                $scope.error = errorResponse;
+            });
+        };
     }
 ]);
-
-
-// console.log($scope.article._id);
-
-
-
-
-//     $update(user.userArticles, myArticle._id);
-//     console.log("userArticles: " + user.userArticles.length);
-//     // myUser.$update(function(response) {
-//     //     console.log("Actualize!! con : " + user.userArticles.length + "__" + response);
-//     // }, function(errorResponse) {
-//     //     console.log("updatError: " + myArticle._id + errorResponse);
-//     //     $scope.error = errorResponse;
-//     // });
-
-// }
